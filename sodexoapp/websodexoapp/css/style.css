@@ -1,0 +1,124 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.content {
+    margin: 10px auto;
+    width: 512px;
+}
+
+.login-container {
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px solid #99CCFF;
+}
+
+label {
+    display: block;
+    float: left;
+    width: 150px;
+    height: 28px;
+    margin-left: 40px;
+    line-height: 28px;
+}
+
+.textfield {
+    width: 250px;
+    margin: 3px 40px 3px 0;
+
+    background-color: #FFF;
+    border-color: #b5b8c8;
+    border-style: solid;
+    border-width: 1px;
+    height: 18px;
+    outline-width: 0;
+    text-decoration: none;
+}
+
+.button {
+    width: 120px;
+    height: 20px;
+
+    float: right;
+    margin-top: 2px;
+    margin-right: 1px;
+
+    background-color: #d3e1f1;
+    border-radius: 0px;
+    border-color: #99bce8;
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 0;
+}
+
+.header {
+    width: 99.75%;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #99bce8;
+
+    text-align: left;
+
+    background: linear-gradient(top, #d3e1f1 1%, #d3e1f1 40%, #abc7ec 60%, #abc7ec 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF474747', endColorstr='#FF474747');
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(1%, #abc7ec), color-stop(40%, #565656), color-stop(60%, #565656), color-stop(100%, #474747));
+    background: -webkit-linear-gradient(top, #abc7ec 1%, #d3e1f1 40%, #d3e1f1 60%, #abc7ec 100%);
+    background: -moz-linear-gradient(top, #abc7ec 1%, #d3e1f1 40%, #d3e1f1 60%, #abc7ec 100%);
+    background: -o-linear-gradient(top, #abc7ec 1%, #d3e1f1 40%, #d3e1f1 60%, #abc7ec 100%);
+    background: -ms-linear-gradient(top, #abc7ec 1%, #d3e1f1 40%, #d3e1f1 60%, #abc7ec 100%);
+    background: linear-gradient(top, #abc7ec 1%, #d3e1f1 40%, #d3e1f1 60%, #abc7ec 100%);
+}
+
+/*.logo {
+    background: url(/static/resources/images/nv3.png) 3px center;
+    background-repeat: no-repeat;
+}*/
+
+.errormsg {
+    background-color: #F2DEDE;
+    border-color: #EED3D7;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #B94A48;
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 18px;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.bottom{
+
+    width: 99.75%;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #99bce8;
+
+    background: #d3e1f1;
+
+}
+
+.reportmsg
+{
+    background-color: #E0E0E0;
+    border-color: #D0D0D0;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #0000FF;
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-bottom: 18px;
+    padding: 8px 0;
+    text-align: center;
+}

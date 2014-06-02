@@ -1,0 +1,20 @@
+######################
+# SODEXOCLIENT
+######################
+-   model: consultation.SodexoClient
+    pk: 1
+    fields:
+        name: 'Marcel'
+        cpf: '08868384795'
+        card_number: '6060710676899014'
+        daily_value: 18.5
+        user: 1
+
+-   model: consultation.SodexoClient
+    pk: 2
+    fields:
+        name: 'Ricardo França'
+        cpf: '13276645777'
+        card_number: '6060712574656017'
+        daily_value: 15.0
+        user: 2

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <title>Sodexo App - Login</title>
+            <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    </head>
+    {% load i18n %}
+    <body>
+        <div class='content'>
+            <br />
+
+            {% if error_msg %}
+                <div class='errormsg'>{{error_msg}}</div>
+            {% endif %}
+            {% if report_msg %}
+                <div class='reportmsg'>{{report_msg}}</div>
+            {% endif %}
+
+            <div class='login-container'>
+                <div class='header'>Acesso
+                </div>
+                <br></br>
+                <form method="POST">
+                    <label for='username'>{% trans 'Usuário' %}</label>
+                    <input class='textfield' type="text" name="username" id='username'/>
+                    <br />
+                    <label for='password'>{% trans 'Senha' %}</label>
+                    <input class='textfield' type="password" name="password" id="password" />
+                    <br />
+                        <div style='width: 150px; margin: 5px 0 0 190px;'>
+                            <div align="left">
+                                <a href="/access/passwordrecover">Esqueci minha senha</a>
+                            </div>
+                            <div align="left">
+                                <a href="/access/createaccount">Criar conta</a>
+                            </div>
+                        </div>
+                    <br />
+                    <div class='bottom'>
+                        <input class='button' type="submit" value="{% trans 'Entrar' %}" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

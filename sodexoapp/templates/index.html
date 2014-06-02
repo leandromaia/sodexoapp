@@ -1,0 +1,23 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <title>Sodexo App</title>
+
+    <link rel="stylesheet" type="text/css" href="/static/sdk/ext-4/resources/css/ext-all.css">
+
+    <script type="text/javascript" src="/static/sdk/ext-4/ext-debug.js"></script>
+
+    <script type="text/javascript" src="/static/app.js"></script>
+
+    <!-- Get user from the response and save at javascript session -->
+    <script>
+            window.Sodexoapp = {Session: {}};
+
+            Sodexoapp.Session.logged_user = {'id': {{ user.id }},
+                                             'username': '{{ user.username}}',
+                                             'email': '{{ user.email}}'};
+    </script>
+
+</head>
+<body></body>
+</html>
