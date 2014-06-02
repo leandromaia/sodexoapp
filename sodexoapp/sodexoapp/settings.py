@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  DATABASES = {'default': dj_database_url.parse('DATABASE_URL=postgres://jqrduwfmgcdqlw:feCnz5voG4tBVHQsNvK99Jt5nK@ec2-54-225-103-9.compute-1.amazonaws.com:5432/d17sut59o4kq7b')}
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
