@@ -41,14 +41,21 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-
-EMAIL_USE_TLS = False
-EMAIL_HOST = '192.168.10.11'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
 #EMAIL_HOST_USER = ''
 #EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 25
+EMAIL_PORT = 587
 
-SENDMAIL_FROM_ADDRESS = 'no-reply@inatel.br'
+SENDMAIL_FROM_ADDRESS = 'sodexoapp.ispm@gmail.com'
+
+# EMAIL_USE_TLS = False
+# EMAIL_HOST = '192.168.10.11'
+# #EMAIL_HOST_USER = ''
+# #EMAIL_HOST_PASSWORD = ''
+# EMAIL_PORT = 25
+
+# SENDMAIL_FROM_ADDRESS = 'no-reply@inatel.br'
 
 PASSWORD_RECOVER_EMAIL_SUBJECT = 'Sodexo new password'
 PASSWORD_RECOVER_EMAIL_MESSAGE = 'Para acessar o Sodexoapp utilize a nova ' \
