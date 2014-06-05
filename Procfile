@@ -1,1 +1,1 @@
-web: python sodexoapp/manage.py runserver 0.0.0.0:$PORT --noreload
+web: python sodexoapp/manage.py collectstatic --noinput; bin/gunicorn_django --workers=4 --bind=0.0.0.0:$PORT sodexoapp/settings.py
