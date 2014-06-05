@@ -1,1 +1,1 @@
-web: python sodexoapp/manage.py collectstatic --dry-run --noinput
+web: python sodexoapp/manage.py runserver 0.0.0.0:$PORT --noreload
