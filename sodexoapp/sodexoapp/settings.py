@@ -15,6 +15,25 @@ MANAGERS = ADMINS
 import dj_database_url
 DATABASES = {'default': dj_database_url.parse('postgres://jqrduwfmgcdqlw:feCnz5voG4tBVHQsNvK99Jt5nK@ec2-54-225-103-9.compute-1.amazonaws.com:5432/d17sut59o4kq7b')}
 
+
+# DATABASES = {
+#     'default': {
+#         # The following settings are not used with sqlite3:
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(os.path.expanduser('~'), 'sodexoapp.db'),
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': '',
+#         'PORT': ''
+#         # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         # 'NAME': 'sodexoapp',
+#         # 'USER': 'netvision',
+#         # 'PASSWORD': 'ispmbr01',
+#         # 'HOST': 'localhost',
+#         # 'PORT': '5432'
+#     }
+# }
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 

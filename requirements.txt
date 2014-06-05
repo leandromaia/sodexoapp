@@ -1,10 +1,12 @@
 Django==1.6.5
+PyYAML==3.10
 argparse==1.2.1
 beautifulsoup4==4.3.2
+distribute==0.6.24
+dj-database-url==0.3.0
+django-piston==0.2.3
 factory-boy==2.2.1
 mock==1.0.1
-pep8==0.6.1
 psycopg2==2.5
 requests==2.3.0
-dj-database-url==0.3.0
 wsgiref==0.1.2
