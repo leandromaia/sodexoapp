@@ -57,7 +57,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'sodexoapp.ispm@gmail.com'
 EMAIL_HOST_PASSWORD = 'sodexoispm'
 EMAIL_PORT = 587
-
 SENDMAIL_FROM_ADDRESS = 'sodexoapp.ispm@gmail.com'
 ###############################################################################
 
