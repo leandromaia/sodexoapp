@@ -22,7 +22,6 @@ class SodexoClientHandler(BaseHandler):
               ('user', ('id', 'username', 'email')))
 
     def read(self, request, id=None, start_id=None):
-        print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>GET"
         try:
             return dict(result=SodexoClient.objects.all(),
                         total=SodexoClient.objects.count())

@@ -12,5 +12,3 @@ urlpatterns = patterns('',
     url(r'^balance$', views.calculate_balance),
     url(r'^getCaptcha$', views.getCaptcha, name='getCaptcha'),
 )
-
-print "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
