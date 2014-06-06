@@ -1,5 +1,7 @@
 # encoding: utf-8
 from piston.handler import BaseHandler
+import logging
+logger = logging.getLogger('sodexologger')
 
 from django.db import transaction
 from django.conf import settings
@@ -30,7 +32,8 @@ class SodexoClientHandler(BaseHandler):
     def create(self, request, *args, **kwargs):
         if not self.has_model():
             return HttpResponse(400, "The SodexoClient model is required.")
-        print "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+        logger.info('Starting processo to save Sodexo Client')
         try:
             attrs = request.data
             user_data = attrs['user']
@@ -38,6 +41,7 @@ class SodexoClientHandler(BaseHandler):
             user.username = user_data['username']
             user.set_password(user_data['password'])
             user.email = user_data['email']
+            logger.info('Saving the user')
             user.save()
 
             sodexo_client = SodexoClient()
@@ -46,16 +50,16 @@ class SodexoClientHandler(BaseHandler):
             sodexo_client.cpf = attrs['cpf']
             sodexo_client.card_number = attrs['card_number']
             sodexo_client.daily_value = attrs['daily_value']
+            logger.info('Saving the sodexo client')
             sodexo_client.save()
 
-            # send_generic_mail(settings.SODEXOCLIENT_CREATED_EMAIL_SUBJECT,\
-            #    settings.SODEXOCLIENT_CREATED_MESSAGE + user.username,\
-            #    [user.email])
+            send_generic_mail(settings.SODEXOCLIENT_CREATED_EMAIL_SUBJECT,\
+               settings.SODEXOCLIENT_CREATED_MESSAGE + user.username,\
+               [user.email])
 
             return {'result': sodexo_client}
         except Exception, e:
-            print "---------------------------------------------------"
-            print e
+            logger.error('Exception: %s' % str(e))
             resp = HttpResponse()
             resp.status_code = 500
             resp.write(str(e))
