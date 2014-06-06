@@ -12,11 +12,12 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-DATABASES = {'default': dj_database_url.parse('postgres://jqrduwfmgcdqlw:feCnz5voG4tBVHQsNvK99Jt5nK@ec2-54-225-103-9.compute-1.amazonaws.com:5432/d17sut59o4kq7b')}
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-
+###############################################################################
+# Develop settings
+###############################################################################
 # DATABASES = {
 #     'default': {
 #         # The following settings are not used with sqlite3:
@@ -35,27 +36,30 @@ DATABASES = {'default': dj_database_url.parse('postgres://jqrduwfmgcdqlw:feCnz5v
 #     }
 # }
 
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
-
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-#EMAIL_HOST_USER = ''
-#EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 587
-
-SENDMAIL_FROM_ADDRESS = 'sodexoapp.ispm@gmail.com'
-
 # EMAIL_USE_TLS = False
 # EMAIL_HOST = '192.168.10.11'
 # #EMAIL_HOST_USER = ''
 # #EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 25
-
 # SENDMAIL_FROM_ADDRESS = 'no-reply@inatel.br'
+###############################################################################
+# Production settings - HEROKU
+###############################################################################
+
+# Parse database configuration from $DATABASE_URL
+import dj_database_url
+DATABASES = {'default': dj_database_url.parse(\
+    'postgres://jqrduwfmgcdqlw:feCnz5voG4tBVHQsNvK99Jt5nK@ec2-54-225-103-9.compute-1.amazonaws.com:5432/d17sut59o4kq7b')}
+
+# Email settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'sodexoapp.ispm@gmail.com'
+EMAIL_HOST_PASSWORD = 'sodexoispm'
+EMAIL_PORT = 587
+
+SENDMAIL_FROM_ADDRESS = 'sodexoapp.ispm@gmail.com'
+###############################################################################
 
 PASSWORD_RECOVER_EMAIL_SUBJECT = 'Sodexo new password'
 PASSWORD_RECOVER_EMAIL_MESSAGE = 'Para acessar o Sodexoapp utilize a nova ' \
@@ -65,13 +69,6 @@ SODEXOCLIENT_CREATED_EMAIL_SUBJECT = 'Sodexo App - Usuario criado com sucesso'
 SODEXOCLIENT_CREATED_MESSAGE = 'Seu cadastro para acesso ao Sodexoapp ' \
                             'foi concluido com sucesso. Utilize o seguinte ' \
                             'username para acesso: '
-# EMAIL_HOST = 'smtp.ispm.com.br'
-# EMAIL_PORT = 25
-# EMAIL_HOST_USER = 'marcel.portela@ispm.com.br'
-# EMAIL_HOST_PASSWORD = '123456'
-# EMAIL_USE_TLS = False
-
-# PLUGIN_SENDMAIL_FROM_ADDRESS = 'desenvolvimento@ispm.com.br'
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
