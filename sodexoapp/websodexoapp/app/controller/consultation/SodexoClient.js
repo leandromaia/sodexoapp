@@ -67,9 +67,8 @@ Ext.define('Sodexoapp.controller.consultation.SodexoClient',{
                 },
                 failure: function(response, opts) {
                     console.error(response.responseText);
-                    // var msgError = "Ocorreu uma falha ao criar seu usuário. "+
-                    //     "Por favor, entre em contato com o administrador do sistema.";
-                    var msgError = response.responseText;
+                    var msgError = "Ocorreu uma falha ao criar seu usuário. "+
+                        "Por favor, entre em contato com o administrador do sistema.";
                     window.location = './access/login?error_msg='+msgError;
                 }
             });

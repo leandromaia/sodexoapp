@@ -30,6 +30,7 @@ class SodexoClientHandler(BaseHandler):
 
     @transaction.commit_on_success
     def create(self, request, *args, **kwargs):
+        print "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         if not self.has_model():
             return HttpResponse(400, "The SodexoClient model is required.")
 
