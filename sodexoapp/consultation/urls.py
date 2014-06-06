@@ -4,6 +4,10 @@ from piston.resource import Resource
 from consultation import handlers
 from consultation import views
 
+import logging
+logger = logging.getLogger('sodexologger')
+
+
 sodexo_client_handler = Resource(handlers.SodexoClientHandler)
 
 urlpatterns = patterns('',
@@ -11,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^balance$', views.calculate_balance),
     url(r'^getCaptcha$', views.getCaptcha, name='getCaptcha'),
 )
-print "RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"
+
+logger.info("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
