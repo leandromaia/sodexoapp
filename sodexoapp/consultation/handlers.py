@@ -30,7 +30,7 @@ class SodexoClientHandler(BaseHandler):
     def create(self, request, *args, **kwargs):
         if not self.has_model():
             return HttpResponse(400, "The SodexoClient model is required.")
-
+        print "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
         try:
             attrs = request.data
             user_data = attrs['user']
@@ -54,6 +54,8 @@ class SodexoClientHandler(BaseHandler):
 
             return {'result': sodexo_client}
         except Exception, e:
+            print "---------------------------------------------------"
+            print e
             resp = HttpResponse()
             resp.status_code = 500
             resp.write(str(e))
