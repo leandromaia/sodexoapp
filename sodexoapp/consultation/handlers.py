@@ -48,9 +48,9 @@ class SodexoClientHandler(BaseHandler):
             sodexo_client.daily_value = attrs['daily_value']
             sodexo_client.save()
 
-            send_generic_mail(settings.SODEXOCLIENT_CREATED_EMAIL_SUBJECT,\
-               settings.SODEXOCLIENT_CREATED_MESSAGE + user.username,\
-               [user.email])
+            # send_generic_mail(settings.SODEXOCLIENT_CREATED_EMAIL_SUBJECT,\
+            #    settings.SODEXOCLIENT_CREATED_MESSAGE + user.username,\
+            #    [user.email])
 
             return {'result': sodexo_client}
         except Exception, e:
