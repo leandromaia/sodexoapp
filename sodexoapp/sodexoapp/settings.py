@@ -179,6 +179,7 @@ INSTALLED_APPS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
+import sys
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -208,6 +209,7 @@ LOGGING = {
         'sodexologger': {
             'handlers': ['console'],
             'level': 'INFO',
+            'stream': sys.stdout
         }
     }
 }
