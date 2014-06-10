@@ -54,10 +54,10 @@ DATABASES = {'default': dj_database_url.parse(\
 # Email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sodexoapp.ispm@gmail.com'
-EMAIL_HOST_PASSWORD = 'sodexoispm'
+EMAIL_HOST_USER = 'noreply.sodexoapp@gmail.com'
+EMAIL_HOST_PASSWORD = 'sodexoapp'
 EMAIL_PORT = 587
-SENDMAIL_FROM_ADDRESS = 'sodexoapp.ispm@gmail.com'
+SENDMAIL_FROM_ADDRESS = 'noreply.sodexoapp@gmail.com'
 ###############################################################################
 
 PASSWORD_RECOVER_EMAIL_SUBJECT = 'Sodexo new password'
