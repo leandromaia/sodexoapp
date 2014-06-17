@@ -45,6 +45,9 @@ class UserAuthenticationHandler(BaseHandler):
 
             send_generic_mail(settings.PASSWORD_RECOVER_EMAIL_SUBJECT,
                settings.PASSWORD_RECOVER_EMAIL_MESSAGE + newPass, [user.email])
+
+            logger.info('The new password was sent successfully by email '\
+                        + 'to user.')
             return {'result': 'Sua nova senha foi gerada com sucesso'\
                     ' e enviada por email'}
         except ObjectDoesNotExist:
