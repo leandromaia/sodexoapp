@@ -10,6 +10,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import get_user_model
 User = get_user_model()
 
+import logging
+logger = logging.getLogger('sodexologger')
+
 
 class UserHandler(BaseHandler):
     allowed_methods = ('GET',)
@@ -32,17 +35,23 @@ class UserAuthenticationHandler(BaseHandler):
     model = User
 
     def update(self, request, id):
+        logger.info('Starting process to change the user password')
         try:
             user = User.objects.get(id=id)
             cup = ChangeUserPassword()
             newPass = cup.aplyChange(user)
+            logger.info('The new password for the user: %s was created'
+                            + ' successfully in data base.' % user.name)
+
             send_generic_mail(settings.PASSWORD_RECOVER_EMAIL_SUBJECT,
                settings.PASSWORD_RECOVER_EMAIL_MESSAGE + newPass, [user.email])
             return {'result': 'Sua nova senha foi gerada com sucesso'\
                     ' e enviada por email'}
         except ObjectDoesNotExist:
+                logger.warning("The user wasn't found in data base")
                 return HttpResponse('Not found', status=404)
-        except Exception:
+        except Exception, e:
+                logger.error("SMTP server is not available. ERROR: %s" % str(e))
                 return HttpResponse('A new password was created but the '\
                 ' Emails server is unavailable now. Please try again later.',
                     status_code=500)

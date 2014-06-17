@@ -208,7 +208,7 @@ LOGGING = {
     'loggers': {
         'sodexologger': {
             'handlers': ['console'],
-            'level': 'WARN',
+            'level': 'INFO',
             'stream': sys.stdout
         }
     }

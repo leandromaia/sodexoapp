@@ -33,7 +33,7 @@ class SodexoClientHandler(BaseHandler):
         if not self.has_model():
             return HttpResponse(400, "The SodexoClient model is required.")
 
-        logger.info('Starting processo to save Sodexo Client')
+        logger.info('Starting process to save Sodexo Client')
         try:
             attrs = request.data
             user_data = attrs['user']
