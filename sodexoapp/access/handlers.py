@@ -40,8 +40,8 @@ class UserAuthenticationHandler(BaseHandler):
             user = User.objects.get(id=id)
             cup = ChangeUserPassword()
             newPass = cup.aplyChange(user)
-            logger.info('The new password for the user: %s was created'
-                            + ' successfully in data base.' % user.name)
+            logger.info('The new password for the user was created'
+                        + ' successfully in data base.')
 
             send_generic_mail(settings.PASSWORD_RECOVER_EMAIL_SUBJECT,
                settings.PASSWORD_RECOVER_EMAIL_MESSAGE + newPass, [user.email])
@@ -51,7 +51,8 @@ class UserAuthenticationHandler(BaseHandler):
                 logger.warning("The user wasn't found in data base")
                 return HttpResponse('Not found', status=404)
         except Exception, e:
-                logger.error("SMTP server is not available. ERROR: %s" % str(e))
+                logger.error("Failed process to generate new password."\
+                            + "ERROR: %s" % str(e))
                 return HttpResponse('A new password was created but the '\
                 ' Emails server is unavailable now. Please try again later.',
                     status_code=500)

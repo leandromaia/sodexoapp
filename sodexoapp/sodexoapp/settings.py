@@ -2,10 +2,6 @@
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -42,6 +38,8 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # #EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 25
 # SENDMAIL_FROM_ADDRESS = 'no-reply@inatel.br'
+
+# DEBUG = True
 ###############################################################################
 # Production settings - HEROKU
 ###############################################################################
@@ -58,7 +56,11 @@ EMAIL_HOST_USER = 'noreply.sodexoapp@gmail.com'
 EMAIL_HOST_PASSWORD = 'sodexoapp'
 EMAIL_PORT = 587
 SENDMAIL_FROM_ADDRESS = 'noreply.sodexoapp@gmail.com'
+
+DEBUG = False
 ###############################################################################
+
+TEMPLATE_DEBUG = DEBUG
 
 PASSWORD_RECOVER_EMAIL_SUBJECT = 'Sodexo new password'
 PASSWORD_RECOVER_EMAIL_MESSAGE = 'Para acessar o Sodexoapp utilize a nova ' \

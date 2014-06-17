@@ -59,7 +59,7 @@ class SodexoClientHandler(BaseHandler):
 
             return {'result': sodexo_client}
         except Exception, e:
-            logger.error('Exception: %s' % str(e))
+            logger.error('ERROR: %s' % str(e))
             resp = HttpResponse()
             resp.status_code = 500
             resp.write(str(e))
