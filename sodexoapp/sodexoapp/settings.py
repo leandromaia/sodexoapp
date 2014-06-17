@@ -198,7 +198,7 @@ LOGGING = {
     },
     'handlers': {
         'null': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'class': 'logging.NullHandler',
         },
         'console': {
