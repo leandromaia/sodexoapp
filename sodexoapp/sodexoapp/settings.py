@@ -33,11 +33,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # }
 
 # EMAIL_USE_TLS = False
-# EMAIL_HOST = '192.168.10.11'
+# EMAIL_HOST = ''
 # #EMAIL_HOST_USER = ''
 # #EMAIL_HOST_PASSWORD = ''
 # EMAIL_PORT = 25
-# SENDMAIL_FROM_ADDRESS = 'no-reply@inatel.br'
+# SENDMAIL_FROM_ADDRESS = ''
 
 # DEBUG = True
 ###############################################################################
